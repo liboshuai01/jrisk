@@ -1,0 +1,3 @@
+cn.liboshuai.jrisk.framework.security.config.JriskSecurityAutoConfiguration
+cn.liboshuai.jrisk.framework.security.config.JriskWebSecurityConfigurerAdapter
+cn.liboshuai.jrisk.framework.operatelog.config.JriskOperateLogConfiguration

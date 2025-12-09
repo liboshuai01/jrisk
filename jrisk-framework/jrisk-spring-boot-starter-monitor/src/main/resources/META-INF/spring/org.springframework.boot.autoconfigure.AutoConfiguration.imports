@@ -1,0 +1,2 @@
+cn.liboshuai.jrisk.framework.tracer.config.JriskTracerAutoConfiguration
+cn.liboshuai.jrisk.framework.tracer.config.JriskMetricsAutoConfiguration

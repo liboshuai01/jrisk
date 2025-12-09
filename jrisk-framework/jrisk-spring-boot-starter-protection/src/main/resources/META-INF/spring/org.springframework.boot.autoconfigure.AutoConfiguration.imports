@@ -1,0 +1,4 @@
+cn.liboshuai.jrisk.framework.idempotent.config.JriskIdempotentConfiguration
+cn.liboshuai.jrisk.framework.lock4j.config.JriskLock4jConfiguration
+cn.liboshuai.jrisk.framework.ratelimiter.config.JriskRateLimiterConfiguration
+cn.liboshuai.jrisk.framework.signature.config.JriskApiSignatureAutoConfiguration

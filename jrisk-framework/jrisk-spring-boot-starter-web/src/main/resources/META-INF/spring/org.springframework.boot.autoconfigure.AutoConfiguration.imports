@@ -1,0 +1,7 @@
+cn.liboshuai.jrisk.framework.apilog.config.JriskApiLogAutoConfiguration
+cn.liboshuai.jrisk.framework.jackson.config.JriskJacksonAutoConfiguration
+cn.liboshuai.jrisk.framework.swagger.config.JriskSwaggerAutoConfiguration
+cn.liboshuai.jrisk.framework.web.config.JriskWebAutoConfiguration
+cn.liboshuai.jrisk.framework.xss.config.JriskXssAutoConfiguration
+cn.liboshuai.jrisk.framework.banner.config.JriskBannerAutoConfiguration
+cn.liboshuai.jrisk.framework.encrypt.config.JriskApiEncryptAutoConfiguration

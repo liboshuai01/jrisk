@@ -1,0 +1,2 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  cn.liboshuai.jrisk.framework.mybatis.config.IdTypeEnvironmentPostProcessor

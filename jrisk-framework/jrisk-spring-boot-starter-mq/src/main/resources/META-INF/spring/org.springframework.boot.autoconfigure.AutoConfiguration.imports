@@ -1,0 +1,3 @@
+cn.liboshuai.jrisk.framework.mq.redis.config.JriskRedisMQProducerAutoConfiguration
+cn.liboshuai.jrisk.framework.mq.redis.config.JriskRedisMQConsumerAutoConfiguration
+cn.liboshuai.jrisk.framework.mq.rabbitmq.config.JriskRabbitMQAutoConfiguration

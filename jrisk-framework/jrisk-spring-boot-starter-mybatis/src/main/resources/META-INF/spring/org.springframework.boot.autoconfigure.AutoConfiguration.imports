@@ -1,0 +1,3 @@
+cn.liboshuai.jrisk.framework.datasource.config.JriskDataSourceAutoConfiguration
+cn.liboshuai.jrisk.framework.mybatis.config.JriskMybatisAutoConfiguration
+cn.liboshuai.jrisk.framework.translate.config.JriskTranslateAutoConfiguration

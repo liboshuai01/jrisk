@@ -1,0 +1,2 @@
+cn.liboshuai.jrisk.framework.quartz.config.JriskQuartzAutoConfiguration
+cn.liboshuai.jrisk.framework.quartz.config.JriskAsyncAutoConfiguration

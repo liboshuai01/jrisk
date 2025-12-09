@@ -1,0 +1,2 @@
+cn.liboshuai.jrisk.framework.redis.config.JriskRedisAutoConfiguration
+cn.liboshuai.jrisk.framework.redis.config.JriskCacheAutoConfiguration
