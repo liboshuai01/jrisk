@@ -22,7 +22,7 @@ import static cn.liboshuai.jrisk.framework.common.util.collection.CollectionUtil
 /**
  * 区域工具类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Slf4j
 public class AreaUtils {

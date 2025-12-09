@@ -3,7 +3,7 @@ package cn.liboshuai.jrisk.module.infra.framework.file.core.client;
 /**
  * 文件客户端
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 public interface FileClient {
 

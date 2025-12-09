@@ -25,7 +25,7 @@ import static cn.liboshuai.jrisk.module.infra.enums.ErrorCodeConstants.API_ERROR
 /**
  * API 错误日志 Service 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 @Validated

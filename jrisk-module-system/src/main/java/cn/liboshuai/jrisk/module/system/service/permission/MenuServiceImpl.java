@@ -33,7 +33,7 @@ import static cn.liboshuai.jrisk.module.system.enums.ErrorCodeConstants.*;
 /**
  * 菜单 Service 实现
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 @Slf4j

@@ -3,7 +3,7 @@ package cn.liboshuai.jrisk.module.system.enums;
 /**
  * System 字典类型的枚举类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 public interface DictTypeConstants {
 

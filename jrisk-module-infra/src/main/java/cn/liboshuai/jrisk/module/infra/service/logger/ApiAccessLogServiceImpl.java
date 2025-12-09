@@ -22,7 +22,7 @@ import static cn.liboshuai.jrisk.module.infra.dal.dataobject.logger.ApiAccessLog
 /**
  * API 访问日志 Service 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Slf4j
 @Service

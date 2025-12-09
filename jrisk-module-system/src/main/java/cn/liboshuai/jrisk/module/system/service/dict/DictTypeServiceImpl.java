@@ -21,7 +21,7 @@ import static cn.liboshuai.jrisk.module.system.enums.ErrorCodeConstants.*;
 /**
  * 字典类型 Service 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 public class DictTypeServiceImpl implements DictTypeService {

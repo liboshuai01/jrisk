@@ -5,7 +5,7 @@ import cn.liboshuai.jrisk.framework.common.biz.system.permission.dto.DeptDataPer
 /**
  * 权限 API 接口
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 public interface PermissionCommonApi {
 

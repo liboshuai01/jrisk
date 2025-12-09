@@ -25,7 +25,7 @@ import static cn.liboshuai.jrisk.module.system.enums.ErrorCodeConstants.*;
 /**
  * 租户套餐 Service 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 @Validated

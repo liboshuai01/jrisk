@@ -20,7 +20,7 @@ import static cn.liboshuai.jrisk.framework.common.util.collection.CollectionUtil
 /**
  * OAuth2 批准 Service 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 @Validated

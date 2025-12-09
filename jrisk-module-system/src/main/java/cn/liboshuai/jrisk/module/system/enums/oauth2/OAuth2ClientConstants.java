@@ -3,7 +3,7 @@ package cn.liboshuai.jrisk.module.system.enums.oauth2;
 /**
  * OAuth2.0 客户端的通用枚举
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 public interface OAuth2ClientConstants {
 

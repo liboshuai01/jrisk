@@ -29,7 +29,7 @@ import static cn.liboshuai.jrisk.module.infra.enums.ErrorCodeConstants.*;
 /**
  * 定时任务 Service 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 @Validated

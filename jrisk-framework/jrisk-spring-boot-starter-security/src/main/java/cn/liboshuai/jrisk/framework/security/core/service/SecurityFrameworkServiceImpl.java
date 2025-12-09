@@ -14,7 +14,7 @@ import static cn.liboshuai.jrisk.framework.security.core.util.SecurityFrameworkU
 /**
  * 默认的 {@link SecurityFrameworkService} 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @AllArgsConstructor
 public class SecurityFrameworkServiceImpl implements SecurityFrameworkService {

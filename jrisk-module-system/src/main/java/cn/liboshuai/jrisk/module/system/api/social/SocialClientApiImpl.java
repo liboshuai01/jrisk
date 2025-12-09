@@ -24,7 +24,7 @@ import static cn.liboshuai.jrisk.framework.common.util.collection.CollectionUtil
 /**
  * 社交应用的 API 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 @Validated

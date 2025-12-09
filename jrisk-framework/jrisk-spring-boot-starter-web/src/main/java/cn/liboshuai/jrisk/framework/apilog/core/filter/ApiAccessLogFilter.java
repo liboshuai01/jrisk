@@ -44,7 +44,7 @@ import static cn.liboshuai.jrisk.framework.common.util.json.JsonUtils.toJsonStri
  *
  * 目的：记录 API 访问日志到数据库中
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Slf4j
 public class ApiAccessLogFilter extends ApiRequestFilter {

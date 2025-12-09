@@ -21,7 +21,7 @@ import static cn.liboshuai.jrisk.module.infra.enums.ErrorCodeConstants.DATA_SOUR
 /**
  * 数据源配置 Service 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 @Validated

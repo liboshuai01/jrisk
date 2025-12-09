@@ -10,7 +10,7 @@ import static cn.liboshuai.jrisk.framework.web.core.util.WebFrameworkUtils.HEADE
 /**
  * 多租户 Util
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 public class TenantUtils {
 

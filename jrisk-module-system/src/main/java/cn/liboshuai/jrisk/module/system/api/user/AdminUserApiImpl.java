@@ -22,7 +22,7 @@ import static cn.liboshuai.jrisk.framework.common.util.collection.CollectionUtil
 /**
  * Admin 用户 API 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 public class AdminUserApiImpl implements AdminUserApi {

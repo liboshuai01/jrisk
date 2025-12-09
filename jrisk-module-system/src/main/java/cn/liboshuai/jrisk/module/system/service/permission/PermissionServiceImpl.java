@@ -39,7 +39,7 @@ import static cn.liboshuai.jrisk.framework.common.util.json.JsonUtils.toJsonStri
 /**
  * 权限 Service 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 @Slf4j

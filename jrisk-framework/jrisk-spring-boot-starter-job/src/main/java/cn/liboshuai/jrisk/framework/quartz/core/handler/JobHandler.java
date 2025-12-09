@@ -3,7 +3,7 @@ package cn.liboshuai.jrisk.framework.quartz.core.handler;
 /**
  * 任务处理器
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 public interface JobHandler {
 

@@ -9,7 +9,7 @@ import cn.liboshuai.jrisk.framework.websocket.core.session.WebSocketSessionManag
  *
  * 注意：仅仅适合单机场景！！！
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 public class LocalWebSocketMessageSender extends AbstractWebSocketMessageSender {
 

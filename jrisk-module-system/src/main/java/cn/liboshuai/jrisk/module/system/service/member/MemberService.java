@@ -3,7 +3,7 @@ package cn.liboshuai.jrisk.module.system.service.member;
 /**
  * Member Service 接口
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 public interface MemberService {
 

@@ -46,7 +46,7 @@ import static cn.liboshuai.jrisk.module.system.enums.ErrorCodeConstants.*;
 /**
  * Auth Service 实现类
  *
- * @author 芋道源码
+ * @author 李博帅
  */
 @Service
 @Slf4j
