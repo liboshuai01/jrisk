@@ -1,4 +1,4 @@
-芋道源码 http://www.iocoder.cn
+jrisk风控系统 https://jrisk.liboshuai.cn
 Application Version: ${jrisk.info.version}
 Spring Boot Version: ${spring-boot.version}
 
