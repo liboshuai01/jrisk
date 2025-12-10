@@ -15,7 +15,8 @@
         <!-- 各种 module 拓展 -->
         <module>jrisk-module-system</module>
         <module>jrisk-module-infra</module>
-<!--        <module>jrisk-module-member</module>-->
+        <module>jrisk-module-risk</module>
+        <!--        <module>jrisk-module-member</module>-->
 <!--        <module>jrisk-module-bpm</module>-->
 <!--        <module>jrisk-module-report</module>-->
 <!--        <module>jrisk-module-mp</module>-->
