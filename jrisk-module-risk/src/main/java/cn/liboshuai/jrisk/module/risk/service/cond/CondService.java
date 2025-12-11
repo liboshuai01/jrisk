@@ -1,13 +1,12 @@
 package cn.liboshuai.jrisk.module.risk.service.cond;
 
-import java.util.*;
-import javax.validation.*;
-import cn.liboshuai.jrisk.module.risk.controller.admin.cond.vo.*;
-import cn.liboshuai.jrisk.module.risk.controller.admin.cond.vo.vo.CondPageReqVO;
-import cn.liboshuai.jrisk.module.risk.controller.admin.cond.vo.vo.CondSaveReqVO;
-import cn.liboshuai.jrisk.module.risk.dal.dataobject.cond.CondDO;
 import cn.liboshuai.jrisk.framework.common.pojo.PageResult;
-import cn.liboshuai.jrisk.framework.common.pojo.PageParam;
+import cn.liboshuai.jrisk.module.risk.controller.admin.cond.vo.CondPageReqVO;
+import cn.liboshuai.jrisk.module.risk.controller.admin.cond.vo.CondSaveReqVO;
+import cn.liboshuai.jrisk.module.risk.dal.dataobject.cond.CondDO;
+
+import javax.validation.Valid;
+import java.util.List;
 
 /**
  * 风控条件 Service 接口
