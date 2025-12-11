@@ -1,20 +1,62 @@
 package cn.liboshuai.jrisk.module.risk.service.rule;
 
-import cn.liboshuai.jrisk.framework.common.pojo.PageResult;
-import cn.liboshuai.jrisk.module.risk.controller.admin.rule.vo.RulePageReqVO;
-import cn.liboshuai.jrisk.module.risk.controller.admin.rule.vo.RuleSaveReqVO;
+import java.util.*;
+import javax.validation.*;
+import cn.liboshuai.jrisk.module.risk.controller.admin.rule.vo.*;
 import cn.liboshuai.jrisk.module.risk.dal.dataobject.rule.RuleDO;
+import cn.liboshuai.jrisk.framework.common.pojo.PageResult;
+import cn.liboshuai.jrisk.framework.common.pojo.PageParam;
 
+/**
+ * 风控规则 Service 接口
+ *
+ * @author 李博帅
+ */
 public interface RuleService {
-    PageResult<RuleDO> getRulePage(RulePageReqVO pageReqVO);
 
-    RuleDO getRule(Long id);
+    /**
+     * 创建风控规则
+     *
+     * @param createReqVO 创建信息
+     * @return 编号
+     */
+    Long createRule(@Valid RuleSaveReqVO createReqVO);
 
-    Long createRule(RuleSaveReqVO createReqVO);
+    /**
+     * 更新风控规则
+     *
+     * @param updateReqVO 更新信息
+     */
+    void updateRule(@Valid RuleSaveReqVO updateReqVO);
 
-    void updateRule(RuleSaveReqVO updateReqVO);
-
+    /**
+     * 删除风控规则
+     *
+     * @param id 编号
+     */
     void deleteRule(Long id);
 
-    void updateRuleStatus(Long id, Integer status);
+    /**
+    * 批量删除风控规则
+    *
+    * @param ids 编号
+    */
+    void deleteRuleListByIds(List<Long> ids);
+
+    /**
+     * 获得风控规则
+     *
+     * @param id 编号
+     * @return 风控规则
+     */
+    RuleDO getRule(Long id);
+
+    /**
+     * 获得风控规则分页
+     *
+     * @param pageReqVO 分页查询
+     * @return 风控规则分页
+     */
+    PageResult<RuleDO> getRulePage(RulePageReqVO pageReqVO);
+
 }

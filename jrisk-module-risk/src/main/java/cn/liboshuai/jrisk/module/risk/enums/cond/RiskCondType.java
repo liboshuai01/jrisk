@@ -1,14 +1,14 @@
-package cn.liboshuai.jrisk.module.risk.enums.rule;
+package cn.liboshuai.jrisk.module.risk.enums.cond;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum RiskRuleTarget {
+public enum RiskCondType {
 
-    USER("user"),
-    BANK("bank");
+    RANGE("range"),
+    RECENT("recent");
 
     private final String value;
 }
