@@ -1,0 +1,51 @@
+package cn.liboshuai.jrisk.module.risk.controller.admin.cond.vo;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.*;
+import java.util.*;
+import java.math.BigDecimal;
+import org.springframework.format.annotation.DateTimeFormat;
+import java.time.LocalDateTime;
+import cn.idev.excel.annotation.*;
+import cn.liboshuai.jrisk.framework.excel.core.annotations.DictFormat;
+import cn.liboshuai.jrisk.framework.excel.core.convert.DictConvert;
+
+@Schema(description = "管理后台 - 风控条件 Response VO")
+@Data
+@ExcelIgnoreUnannotated
+public class CondRespVO {
+
+    @Schema(description = "编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "13024")
+    @ExcelProperty("编号")
+    private Long id;
+
+    @Schema(description = "条件编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "6962")
+    @ExcelProperty("条件编号")
+    private Long condId;
+
+    @Schema(description = "条件类型", requiredMode = Schema.RequiredMode.REQUIRED, example = "rencent")
+    @ExcelProperty(value = "条件类型", converter = DictConvert.class)
+    @DictFormat("risk_cond.type") // TODO 代码优化：建议设置到对应的 DictTypeConstants 枚举类中
+    private String condType;
+
+    @Schema(description = "窗口值", requiredMode = Schema.RequiredMode.REQUIRED)
+    @ExcelProperty("窗口值")
+    private Long windowValue;
+
+    @Schema(description = "窗口单位", requiredMode = Schema.RequiredMode.REQUIRED)
+    @ExcelProperty("窗口单位")
+    private String windowUnit;
+
+    @Schema(description = "阈值", requiredMode = Schema.RequiredMode.REQUIRED)
+    @ExcelProperty("阈值")
+    private BigDecimal threshold;
+
+    @Schema(description = "跨历史时间点", requiredMode = Schema.RequiredMode.REQUIRED)
+    @ExcelProperty("跨历史时间点")
+    private LocalDateTime timeline;
+
+    @Schema(description = "规则编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "210")
+    @ExcelProperty("规则编号")
+    private Long ruleId;
+
+}
