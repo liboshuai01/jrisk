@@ -1,11 +1,13 @@
 package cn.liboshuai.jrisk.module.risk.service.rule;
 
-import java.util.*;
-import javax.validation.*;
-import cn.liboshuai.jrisk.module.risk.controller.admin.rule.vo.*;
+import cn.liboshuai.jrisk.framework.common.pojo.PageResult;
+import cn.liboshuai.jrisk.module.risk.controller.admin.rule.vo.RulePageReqVO;
+import cn.liboshuai.jrisk.module.risk.controller.admin.rule.vo.RuleSaveReqVO;
 import cn.liboshuai.jrisk.module.risk.dal.dataobject.cond.CondDO;
 import cn.liboshuai.jrisk.module.risk.dal.dataobject.rule.RuleDO;
-import cn.liboshuai.jrisk.framework.common.pojo.PageResult;
+
+import javax.validation.Valid;
+import java.util.List;
 
 /**
  * 风控规则 Service 接口

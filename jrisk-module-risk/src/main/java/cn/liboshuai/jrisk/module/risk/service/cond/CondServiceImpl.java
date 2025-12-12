@@ -1,19 +1,19 @@
 package cn.liboshuai.jrisk.module.risk.service.cond;
 
+import cn.liboshuai.jrisk.framework.common.pojo.PageResult;
+import cn.liboshuai.jrisk.framework.common.util.object.BeanUtils;
+import cn.liboshuai.jrisk.module.risk.controller.admin.cond.vo.CondPageReqVO;
+import cn.liboshuai.jrisk.module.risk.controller.admin.cond.vo.CondSaveReqVO;
 import cn.liboshuai.jrisk.module.risk.dal.dataobject.cond.CondDO;
 import cn.liboshuai.jrisk.module.risk.dal.mysql.cond.CondMapper;
 import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import org.springframework.validation.annotation.Validated;
 
-import java.util.*;
-import cn.liboshuai.jrisk.module.risk.controller.admin.cond.vo.*;
-import cn.liboshuai.jrisk.framework.common.pojo.PageResult;
-import cn.liboshuai.jrisk.framework.common.util.object.BeanUtils;
+import javax.annotation.Resource;
+import java.util.List;
 
 import static cn.liboshuai.jrisk.framework.common.exception.util.ServiceExceptionUtil.exception;
-import static cn.liboshuai.jrisk.framework.common.util.collection.CollectionUtils.convertList;
-import static cn.liboshuai.jrisk.module.risk.enums.ErrorCodeConstants.*;
+import static cn.liboshuai.jrisk.module.risk.enums.ErrorCodeConstants.COND_NOT_EXISTS;
 
 /**
  * 风控条件 Service 实现类

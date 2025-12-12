@@ -2,9 +2,11 @@ package cn.liboshuai.jrisk.module.risk.controller.admin.rule.vo;
 
 import cn.liboshuai.jrisk.module.risk.dal.dataobject.cond.CondDO;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
-import java.util.*;
-import javax.validation.constraints.*;
+import lombok.Data;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Schema(description = "管理后台 - 风控规则新增/修改 Request VO")
 @Data
