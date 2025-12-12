@@ -11,7 +11,7 @@
  Target Server Version : 80407 (8.4.7)
  File Encoding         : 65001
 
- Date: 12/12/2025 05:56:31
+ Date: 12/12/2025 08:32:40
 */
 
 SET NAMES utf8mb4;
@@ -49,7 +49,7 @@ CREATE TABLE `infra_api_access_log`  (
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_create_time`(`create_time` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 36233 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'API 访问日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 36233 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'API 访问日志表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_api_access_log
@@ -89,7 +89,7 @@ CREATE TABLE `infra_api_error_log`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 23216 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '系统异常日志' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 23216 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '系统异常日志' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_api_error_log
@@ -130,104 +130,67 @@ CREATE TABLE `infra_codegen_column`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2752 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '代码生成表字段定义' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2781 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '代码生成表字段定义' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_codegen_column
 -- ----------------------------
-INSERT INTO `infra_codegen_column` VALUES (2659, 197, 'id', 'BIGINT', '日志主键', b'0', b'1', 1, 'Long', 'id', '', '20810', b'0', b'1', b'0', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2660, 197, 'trace_id', 'VARCHAR', '链路追踪编号', b'0', b'0', 2, 'String', 'traceId', '', '9847', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2661, 197, 'user_id', 'BIGINT', '用户编号', b'0', b'0', 3, 'Long', 'userId', '', '31272', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2662, 197, 'user_type', 'TINYINT', '用户类型', b'0', b'0', 4, 'Integer', 'userType', '', '1', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2663, 197, 'application_name', 'VARCHAR', '应用名', b'0', b'0', 5, 'String', 'applicationName', '', '张三', b'1', b'1', b'1', 'LIKE', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2664, 197, 'request_method', 'VARCHAR', '请求方法名', b'0', b'0', 6, 'String', 'requestMethod', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2665, 197, 'request_url', 'VARCHAR', '请求地址', b'0', b'0', 7, 'String', 'requestUrl', '', 'https://www.iocoder.cn', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2666, 197, 'request_params', 'LONGVARCHAR', '请求参数', b'1', b'0', 8, 'String', 'requestParams', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2667, 197, 'response_body', 'LONGVARCHAR', '响应结果', b'1', b'0', 9, 'String', 'responseBody', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2668, 197, 'user_ip', 'VARCHAR', '用户 IP', b'0', b'0', 10, 'String', 'userIp', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2669, 197, 'user_agent', 'VARCHAR', '浏览器 UA', b'0', b'0', 11, 'String', 'userAgent', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2670, 197, 'operate_module', 'VARCHAR', '操作模块', b'1', b'0', 12, 'String', 'operateModule', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2671, 197, 'operate_name', 'VARCHAR', '操作名', b'1', b'0', 13, 'String', 'operateName', '', '芋艿', b'1', b'1', b'1', 'LIKE', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2672, 197, 'operate_type', 'TINYINT', '操作分类', b'1', b'0', 14, 'Integer', 'operateType', '', '1', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2673, 197, 'begin_time', 'TIMESTAMP', '开始请求时间', b'0', b'0', 15, 'LocalDateTime', 'beginTime', '', NULL, b'1', b'1', b'1', 'BETWEEN', b'1', 'datetime', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2674, 197, 'end_time', 'TIMESTAMP', '结束请求时间', b'0', b'0', 16, 'LocalDateTime', 'endTime', '', NULL, b'1', b'1', b'1', 'BETWEEN', b'1', 'datetime', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2675, 197, 'duration', 'INTEGER', '执行时长', b'0', b'0', 17, 'Integer', 'duration', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2676, 197, 'result_code', 'INTEGER', '结果码', b'0', b'0', 18, 'Integer', 'resultCode', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2677, 197, 'result_msg', 'VARCHAR', '结果提示', b'1', b'0', 19, 'String', 'resultMsg', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2678, 197, 'creator', 'VARCHAR', '创建者', b'1', b'0', 20, 'String', 'creator', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2679, 197, 'create_time', 'TIMESTAMP', '创建时间', b'0', b'0', 21, 'LocalDateTime', 'createTime', '', NULL, b'0', b'0', b'1', 'BETWEEN', b'1', 'datetime', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2680, 197, 'updater', 'VARCHAR', '更新者', b'1', b'0', 22, 'String', 'updater', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2681, 197, 'update_time', 'TIMESTAMP', '更新时间', b'0', b'0', 23, 'LocalDateTime', 'updateTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2682, 197, 'deleted', 'BIT', '是否删除', b'0', b'0', 24, 'Boolean', 'deleted', '', NULL, b'0', b'0', b'0', '=', b'0', 'radio', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2683, 197, 'tenant_id', 'BIGINT', '租户编号', b'0', b'0', 25, 'Long', 'tenantId', '', '11158', b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2684, 198, 'id', 'BIGINT', '编号', b'0', b'1', 1, 'Long', 'id', '', '23610', b'0', b'1', b'0', '=', b'1', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2685, 198, 'rule_id', 'BIGINT', '规则编号', b'0', b'0', 2, 'Long', 'ruleId', '', '3113', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2686, 198, 'rule_name', 'VARCHAR', '规则名称', b'0', b'0', 3, 'String', 'ruleName', '', '芋艿', b'1', b'1', b'1', 'LIKE', b'1', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2687, 198, 'rule_desc', 'VARCHAR', '规则描述', b'0', b'0', 4, 'String', 'ruleDesc', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2688, 198, 'risk_level', 'INTEGER', '预警级别', b'0', b'0', 5, 'Integer', 'riskLevel', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2689, 198, 'risk_template', 'LONGVARCHAR', '预警模板', b'1', b'0', 6, 'String', 'riskTemplate', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2690, 198, 'channel', 'VARCHAR', '渠道', b'0', b'0', 7, 'String', 'channel', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2691, 198, 'target', 'VARCHAR', '目标', b'0', b'0', 8, 'String', 'target', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2692, 198, 'creator', 'VARCHAR', '创建者', b'1', b'0', 9, 'String', 'creator', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2693, 198, 'create_time', 'TIMESTAMP', '创建时间', b'0', b'0', 10, 'LocalDateTime', 'createTime', '', NULL, b'0', b'0', b'1', 'BETWEEN', b'1', 'datetime', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2694, 198, 'updater', 'VARCHAR', '更新者', b'1', b'0', 11, 'String', 'updater', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2695, 198, 'update_time', 'TIMESTAMP', '更新时间', b'0', b'0', 12, 'LocalDateTime', 'updateTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2696, 198, 'deleted', 'BIT', '是否删除', b'0', b'0', 13, 'Boolean', 'deleted', '', NULL, b'0', b'0', b'0', '=', b'0', 'radio', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2697, 198, 'tenant_id', 'BIGINT', '租户编号', b'0', b'0', 14, 'Long', 'tenantId', '', '23424', b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:48', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2698, 199, 'id', 'BIGINT', '编号', b'0', b'1', 1, 'Long', 'id', '', '12070', b'0', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2699, 199, 'cond_id', 'BIGINT', '条件编号', b'0', b'0', 2, 'Long', 'condId', '', '6201', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2700, 199, 'cond_type', 'VARCHAR', '条件类型', b'0', b'0', 3, 'String', 'condType', '', '2', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2701, 199, 'window_value', 'BIGINT', '窗口值', b'0', b'0', 4, 'Long', 'windowValue', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2702, 199, 'window_unit', 'VARCHAR', '窗口单位', b'0', b'0', 5, 'String', 'windowUnit', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2703, 199, 'threshold', 'DECIMAL', '阈值', b'0', b'0', 6, 'BigDecimal', 'threshold', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2704, 199, 'timeline', 'TIMESTAMP', '跨历史时间点', b'0', b'0', 7, 'LocalDateTime', 'timeline', '', NULL, b'1', b'1', b'1', '=', b'1', 'datetime', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2705, 199, 'rule_id', 'BIGINT', '规则编号', b'0', b'0', 8, 'Long', 'ruleId', '', '16609', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2706, 199, 'creator', 'VARCHAR', '创建者', b'1', b'0', 9, 'String', 'creator', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2707, 199, 'create_time', 'TIMESTAMP', '创建时间', b'0', b'0', 10, 'LocalDateTime', 'createTime', '', NULL, b'0', b'0', b'1', 'BETWEEN', b'1', 'datetime', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2708, 199, 'updater', 'VARCHAR', '更新者', b'1', b'0', 11, 'String', 'updater', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2709, 199, 'update_time', 'TIMESTAMP', '更新时间', b'0', b'0', 12, 'LocalDateTime', 'updateTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2710, 199, 'deleted', 'BIT', '是否删除', b'0', b'0', 13, 'Boolean', 'deleted', '', NULL, b'0', b'0', b'0', '=', b'0', 'radio', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2711, 200, 'id', 'BIGINT', '编号', b'0', b'1', 1, 'Long', 'id', '', '19164', b'0', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2712, 200, 'rule_id', 'BIGINT', '规则编号', b'0', b'0', 2, 'Long', 'ruleId', '', '25115', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2713, 200, 'rule_name', 'VARCHAR', '规则名称', b'0', b'0', 3, 'String', 'ruleName', '', '李四', b'1', b'1', b'1', 'LIKE', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2714, 200, 'rule_desc', 'VARCHAR', '规则描述', b'1', b'0', 4, 'String', 'ruleDesc', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2715, 200, 'risk_template', 'LONGVARCHAR', '预警模板', b'0', b'0', 5, 'String', 'riskTemplate', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2716, 200, 'level', 'TINYINT', '预警级别', b'0', b'0', 6, 'Integer', 'level', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2717, 200, 'channel', 'VARCHAR', '渠道', b'0', b'0', 7, 'String', 'channel', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2718, 200, 'target', 'VARCHAR', '目标', b'0', b'0', 8, 'String', 'target', '', NULL, b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2719, 200, 'status', 'TINYINT', '状态', b'0', b'0', 9, 'Integer', 'status', '', '2', b'1', b'1', b'1', '=', b'1', 'radio', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2720, 200, 'creator', 'VARCHAR', '创建者', b'1', b'0', 10, 'String', 'creator', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2721, 200, 'create_time', 'TIMESTAMP', '创建时间', b'0', b'0', 11, 'LocalDateTime', 'createTime', '', NULL, b'0', b'0', b'1', 'BETWEEN', b'1', 'datetime', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2722, 200, 'updater', 'VARCHAR', '更新者', b'1', b'0', 12, 'String', 'updater', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2723, 200, 'update_time', 'TIMESTAMP', '更新时间', b'0', b'0', 13, 'LocalDateTime', 'updateTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2724, 200, 'deleted', 'BIT', '是否删除', b'0', b'0', 14, 'Boolean', 'deleted', '', NULL, b'0', b'0', b'0', '=', b'0', 'radio', '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:34', b'1');
-INSERT INTO `infra_codegen_column` VALUES (2725, 201, 'id', 'BIGINT', '编号', b'0', b'1', 1, 'Long', 'id', '', '28137', b'0', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2726, 201, 'cond_id', 'BIGINT', '条件编号', b'0', b'0', 2, 'Long', 'condId', '', '19606', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2727, 201, 'cond_type', 'VARCHAR', '条件类型', b'0', b'0', 3, 'String', 'condType', 'risk_cond.type', 'recent', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2728, 201, 'window_value', 'BIGINT', '窗口值', b'0', b'0', 4, 'Long', 'windowValue', '', NULL, b'1', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2729, 201, 'window_unit', 'VARCHAR', '窗口单位', b'0', b'0', 5, 'String', 'windowUnit', '', NULL, b'1', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2730, 201, 'threshold', 'DECIMAL', '阈值', b'0', b'0', 6, 'BigDecimal', 'threshold', '', NULL, b'1', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2731, 201, 'timeline', 'TIMESTAMP', '跨历史时间点', b'0', b'0', 7, 'LocalDateTime', 'timeline', '', NULL, b'1', b'1', b'0', 'BETWEEN', b'1', 'datetime', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2732, 201, 'rule_id', 'BIGINT', '规则编号', b'0', b'0', 8, 'Long', 'ruleId', '', '18272', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2733, 201, 'creator', 'VARCHAR', '创建者', b'1', b'0', 9, 'String', 'creator', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2734, 201, 'create_time', 'TIMESTAMP', '创建时间', b'0', b'0', 10, 'LocalDateTime', 'createTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2735, 201, 'updater', 'VARCHAR', '更新者', b'1', b'0', 11, 'String', 'updater', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2736, 201, 'update_time', 'TIMESTAMP', '更新时间', b'0', b'0', 12, 'LocalDateTime', 'updateTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2737, 201, 'deleted', 'BIT', '是否删除', b'0', b'0', 13, 'Boolean', 'deleted', '', NULL, b'0', b'0', b'0', '=', b'0', 'radio', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2738, 202, 'id', 'BIGINT', '编号', b'0', b'1', 1, 'Long', 'id', '', '12827', b'0', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2739, 202, 'rule_id', 'BIGINT', '规则编号', b'0', b'0', 2, 'Long', 'ruleId', '', '18652', b'1', b'0', b'1', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2740, 202, 'rule_name', 'VARCHAR', '规则名称', b'0', b'0', 3, 'String', 'ruleName', '', '赵六', b'1', b'1', b'1', 'LIKE', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2741, 202, 'rule_desc', 'VARCHAR', '规则描述', b'1', b'0', 4, 'String', 'ruleDesc', '', NULL, b'1', b'1', b'0', 'LIKE', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2742, 202, 'template', 'LONGVARCHAR', '预警模板', b'0', b'0', 5, 'String', 'template', '', NULL, b'1', b'1', b'0', 'LIKE', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2743, 202, 'level', 'TINYINT', '预警级别', b'0', b'0', 6, 'Integer', 'level', 'risk_rule.level', '4', b'1', b'1', b'0', '=', b'1', 'select', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2744, 202, 'channel', 'VARCHAR', '渠道', b'0', b'0', 7, 'String', 'channel', 'risk_rule.channel', 'game', b'1', b'1', b'0', '=', b'1', 'select', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2745, 202, 'target', 'VARCHAR', '目标', b'0', b'0', 8, 'String', 'target', 'risk_rule.target', 'user', b'1', b'1', b'0', '=', b'1', 'select', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2746, 202, 'status', 'TINYINT', '状态', b'0', b'0', 9, 'Integer', 'status', 'risk_rule.status', '1', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2747, 202, 'creator', 'VARCHAR', '创建者', b'1', b'0', 10, 'String', 'creator', '', NULL, b'0', b'0', b'1', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2748, 202, 'create_time', 'TIMESTAMP', '创建时间', b'0', b'0', 11, 'LocalDateTime', 'createTime', '', NULL, b'0', b'0', b'1', 'BETWEEN', b'1', 'datetime', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2749, 202, 'updater', 'VARCHAR', '更新者', b'1', b'0', 12, 'String', 'updater', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2750, 202, 'update_time', 'TIMESTAMP', '更新时间', b'0', b'0', 13, 'LocalDateTime', 'updateTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
-INSERT INTO `infra_codegen_column` VALUES (2751, 202, 'deleted', 'BIT', '是否删除', b'0', b'0', 14, 'Boolean', 'deleted', '', NULL, b'0', b'0', b'0', '=', b'0', 'radio', '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2725, 201, 'id', 'BIGINT', '编号', b'0', b'1', 1, 'Long', 'id', '', '28137', b'0', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2726, 201, 'cond_id', 'BIGINT', '条件编号', b'0', b'0', 2, 'Long', 'condId', '', '19606', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2727, 201, 'cond_type', 'VARCHAR', '条件类型', b'0', b'0', 3, 'String', 'condType', 'risk_cond.type', 'recent', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2728, 201, 'window_value', 'BIGINT', '窗口值', b'0', b'0', 4, 'Long', 'windowValue', '', NULL, b'1', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2729, 201, 'window_unit', 'VARCHAR', '窗口单位', b'0', b'0', 5, 'String', 'windowUnit', '', NULL, b'1', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2730, 201, 'threshold', 'DECIMAL', '阈值', b'0', b'0', 6, 'BigDecimal', 'threshold', '', NULL, b'1', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2731, 201, 'timeline', 'TIMESTAMP', '跨历史时间点', b'0', b'0', 7, 'LocalDateTime', 'timeline', '', NULL, b'1', b'1', b'0', 'BETWEEN', b'1', 'datetime', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2732, 201, 'rule_id', 'BIGINT', '规则编号', b'0', b'0', 8, 'Long', 'ruleId', '', '18272', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2733, 201, 'creator', 'VARCHAR', '创建者', b'1', b'0', 9, 'String', 'creator', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2734, 201, 'create_time', 'TIMESTAMP', '创建时间', b'0', b'0', 10, 'LocalDateTime', 'createTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2735, 201, 'updater', 'VARCHAR', '更新者', b'1', b'0', 11, 'String', 'updater', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2736, 201, 'update_time', 'TIMESTAMP', '更新时间', b'0', b'0', 12, 'LocalDateTime', 'updateTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2737, 201, 'deleted', 'BIT', '是否删除', b'0', b'0', 13, 'Boolean', 'deleted', '', NULL, b'0', b'0', b'0', '=', b'0', 'radio', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:11', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2738, 202, 'id', 'BIGINT', '编号', b'0', b'1', 1, 'Long', 'id', '', '12827', b'0', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2739, 202, 'rule_id', 'BIGINT', '规则编号', b'0', b'0', 2, 'Long', 'ruleId', '', '18652', b'1', b'0', b'1', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2740, 202, 'rule_name', 'VARCHAR', '规则名称', b'0', b'0', 3, 'String', 'ruleName', '', '赵六', b'1', b'1', b'1', 'LIKE', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2741, 202, 'rule_desc', 'VARCHAR', '规则描述', b'1', b'0', 4, 'String', 'ruleDesc', '', NULL, b'1', b'1', b'0', 'LIKE', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2742, 202, 'template', 'LONGVARCHAR', '预警模板', b'0', b'0', 5, 'String', 'template', '', NULL, b'1', b'1', b'0', 'LIKE', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2743, 202, 'level', 'TINYINT', '预警级别', b'0', b'0', 6, 'Integer', 'level', 'risk_rule.level', '4', b'1', b'1', b'0', '=', b'1', 'select', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2744, 202, 'channel', 'VARCHAR', '渠道', b'0', b'0', 7, 'String', 'channel', 'risk_rule.channel', 'game', b'1', b'1', b'0', '=', b'1', 'select', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2745, 202, 'target', 'VARCHAR', '目标', b'0', b'0', 8, 'String', 'target', 'risk_rule.target', 'user', b'1', b'1', b'0', '=', b'1', 'select', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2746, 202, 'status', 'TINYINT', '状态', b'0', b'0', 9, 'Integer', 'status', 'risk_rule.status', '1', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2747, 202, 'creator', 'VARCHAR', '创建者', b'1', b'0', 10, 'String', 'creator', '', NULL, b'0', b'0', b'1', '=', b'1', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2748, 202, 'create_time', 'TIMESTAMP', '创建时间', b'0', b'0', 11, 'LocalDateTime', 'createTime', '', NULL, b'0', b'0', b'1', 'BETWEEN', b'1', 'datetime', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2749, 202, 'updater', 'VARCHAR', '更新者', b'1', b'0', 12, 'String', 'updater', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2750, 202, 'update_time', 'TIMESTAMP', '更新时间', b'0', b'0', 13, 'LocalDateTime', 'updateTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2751, 202, 'deleted', 'BIT', '是否删除', b'0', b'0', 14, 'Boolean', 'deleted', '', NULL, b'0', b'0', b'0', '=', b'0', 'radio', '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:09', b'1');
+INSERT INTO `infra_codegen_column` VALUES (2752, 203, 'id', 'BIGINT', '编号', b'0', b'1', 1, 'Long', 'id', '', '13024', b'0', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2753, 203, 'cond_id', 'BIGINT', '条件编号', b'0', b'0', 2, 'Long', 'condId', '', '6962', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2754, 203, 'cond_type', 'VARCHAR', '条件类型', b'0', b'0', 3, 'String', 'condType', 'risk_cond.type', 'rencent', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2755, 203, 'window_value', 'BIGINT', '窗口值', b'0', b'0', 4, 'Long', 'windowValue', '', NULL, b'1', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2756, 203, 'window_unit', 'VARCHAR', '窗口单位', b'0', b'0', 5, 'String', 'windowUnit', '', NULL, b'1', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2757, 203, 'threshold', 'DECIMAL', '阈值', b'0', b'0', 6, 'BigDecimal', 'threshold', '', NULL, b'1', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2758, 203, 'timeline', 'TIMESTAMP', '跨历史时间点', b'0', b'0', 7, 'LocalDateTime', 'timeline', '', NULL, b'1', b'1', b'1', 'BETWEEN', b'1', 'datetime', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2759, 203, 'rule_id', 'BIGINT', '规则编号', b'0', b'0', 8, 'Long', 'ruleId', '', '210', b'1', b'1', b'1', '=', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2760, 203, 'creator', 'VARCHAR', '创建者', b'1', b'0', 9, 'String', 'creator', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2761, 203, 'create_time', 'TIMESTAMP', '创建时间', b'0', b'0', 10, 'LocalDateTime', 'createTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2762, 203, 'updater', 'VARCHAR', '更新者', b'1', b'0', 11, 'String', 'updater', '', NULL, b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2763, 203, 'update_time', 'TIMESTAMP', '更新时间', b'0', b'0', 12, 'LocalDateTime', 'updateTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'0', 'datetime', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2764, 203, 'deleted', 'BIT', '是否删除', b'0', b'0', 13, 'Boolean', 'deleted', '', NULL, b'0', b'0', b'0', '=', b'0', 'radio', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2765, 203, 'tenant_id', 'BIGINT', '租户编号', b'0', b'0', 14, 'Long', 'tenantId', '', '22059', b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2766, 204, 'id', 'BIGINT', '编号', b'0', b'1', 1, 'Long', 'id', '', '5004', b'0', b'1', b'0', '=', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2767, 204, 'rule_id', 'BIGINT', '规则编号', b'0', b'0', 2, 'Long', 'ruleId', '', '11571', b'1', b'0', b'1', '=', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2768, 204, 'rule_name', 'VARCHAR', '规则名称', b'0', b'0', 3, 'String', 'ruleName', '', '张三', b'1', b'1', b'1', 'LIKE', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2769, 204, 'rule_desc', 'VARCHAR', '规则描述', b'1', b'0', 4, 'String', 'ruleDesc', '', NULL, b'1', b'1', b'0', 'LIKE', b'1', 'textarea', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2770, 204, 'template', 'LONGVARCHAR', '预警模板', b'0', b'0', 5, 'String', 'template', '', NULL, b'1', b'1', b'0', '=', b'1', 'textarea', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2771, 204, 'level', 'TINYINT', '预警级别', b'0', b'0', 6, 'Integer', 'level', 'risk_rule.level', '2', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2772, 204, 'channel', 'VARCHAR', '渠道', b'0', b'0', 7, 'String', 'channel', 'risk_rule.channel', 'game', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2773, 204, 'target', 'VARCHAR', '目标', b'0', b'0', 8, 'String', 'target', 'risk_rule.target', 'user', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2774, 204, 'status', 'TINYINT', '状态', b'0', b'0', 9, 'Integer', 'status', 'risk_rule.status', '0', b'1', b'1', b'1', '=', b'1', 'select', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2775, 204, 'creator', 'VARCHAR', '创建者', b'1', b'0', 10, 'String', 'creator', '', NULL, b'0', b'0', b'1', 'LIKE', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2776, 204, 'create_time', 'TIMESTAMP', '创建时间', b'0', b'0', 11, 'LocalDateTime', 'createTime', '', NULL, b'0', b'0', b'1', 'BETWEEN', b'1', 'datetime', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2777, 204, 'updater', 'VARCHAR', '更新者', b'1', b'0', 12, 'String', 'updater', '', NULL, b'0', b'0', b'0', '=', b'1', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2778, 204, 'update_time', 'TIMESTAMP', '更新时间', b'0', b'0', 13, 'LocalDateTime', 'updateTime', '', NULL, b'0', b'0', b'0', 'BETWEEN', b'1', 'datetime', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2779, 204, 'deleted', 'BIT', '是否删除', b'0', b'0', 14, 'Boolean', 'deleted', '', NULL, b'0', b'0', b'0', '=', b'0', 'radio', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
+INSERT INTO `infra_codegen_column` VALUES (2780, 204, 'tenant_id', 'BIGINT', '租户编号', b'0', b'0', 15, 'Long', 'tenantId', '', '28249', b'0', b'0', b'0', '=', b'0', 'input', '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
 
 -- ----------------------------
 -- Table structure for infra_codegen_table
@@ -259,17 +222,15 @@ CREATE TABLE `infra_codegen_table`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 203 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '代码生成表定义' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 205 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '代码生成表定义' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_codegen_table
 -- ----------------------------
-INSERT INTO `infra_codegen_table` VALUES (197, 0, 1, 'infra_api_access_log', 'API 访问日志表', NULL, 'infra', 'apiaccesslog', 'ApiAccessLog', 'API 访问日志', '李博帅', 1, 20, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2025-12-10 07:07:08', '1', '2025-12-10 07:08:46', b'1');
-INSERT INTO `infra_codegen_table` VALUES (198, 0, 1, 'risk_rule', '风控规则管理', NULL, 'risk', 'rule', 'Rule', '风控规则管理', '李博帅', 1, 20, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2025-12-10 07:17:56', '1', '2025-12-12 04:46:44', b'1');
-INSERT INTO `infra_codegen_table` VALUES (199, 0, 1, 'risk_cond', '风控条件表', NULL, 'risk', 'cond', 'Cond', '风控条件', '李博帅', 1, 20, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:31', b'1');
-INSERT INTO `infra_codegen_table` VALUES (200, 0, 1, 'risk_rule', '风控规则表', NULL, 'risk', 'rule', 'Rule', '风控规则', '李博帅', 1, 20, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2025-12-12 04:51:46', '1', '2025-12-12 05:04:31', b'1');
-INSERT INTO `infra_codegen_table` VALUES (201, 0, 1, 'risk_cond', '风控条件表', NULL, 'risk', 'cond', 'Cond', '风控条件', '李博帅', 1, 20, 5047, NULL, NULL, NULL, NULL, NULL, '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:08:10', b'0');
-INSERT INTO `infra_codegen_table` VALUES (202, 0, 1, 'risk_rule', '风控规则表', NULL, 'risk', 'rule', 'Rule', '风控规则', '李博帅', 1, 20, 5047, NULL, NULL, NULL, NULL, NULL, '1', '2025-12-12 05:04:39', '1', '2025-12-12 05:11:34', b'0');
+INSERT INTO `infra_codegen_table` VALUES (201, 0, 1, 'risk_cond', '风控条件表', NULL, 'risk', 'cond', 'Cond', '风控条件', '李博帅', 1, 20, 5047, NULL, NULL, NULL, NULL, NULL, '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:08', b'1');
+INSERT INTO `infra_codegen_table` VALUES (202, 0, 1, 'risk_rule', '风控规则表', NULL, 'risk', 'rule', 'Rule', '风控规则', '李博帅', 1, 20, 5047, NULL, NULL, NULL, NULL, NULL, '1', '2025-12-12 05:04:39', '1', '2025-12-12 06:52:06', b'1');
+INSERT INTO `infra_codegen_table` VALUES (203, 0, 1, 'risk_cond', '风控条件表', NULL, 'risk', 'cond', 'Cond', '风控条件', '李博帅', 15, 20, 5047, 204, 2759, b'1', NULL, NULL, '1', '2025-12-12 06:52:17', '1', '2025-12-12 06:55:29', b'0');
+INSERT INTO `infra_codegen_table` VALUES (204, 0, 1, 'risk_rule', '风控规则表', NULL, 'risk', 'rule', 'Rule', '风控规则', '李博帅', 10, 20, 5047, NULL, NULL, NULL, NULL, NULL, '1', '2025-12-12 06:52:17', '1', '2025-12-12 08:20:51', b'0');
 
 -- ----------------------------
 -- Table structure for infra_config
@@ -290,7 +251,7 @@ CREATE TABLE `infra_config`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '参数配置表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '参数配置表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_config
@@ -320,7 +281,7 @@ CREATE TABLE `infra_data_source_config`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '数据源配置表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '数据源配置表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_data_source_config
@@ -344,7 +305,7 @@ CREATE TABLE `infra_file`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2142 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '文件表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2142 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '文件表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_file
@@ -367,7 +328,7 @@ CREATE TABLE `infra_file_config`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '文件配置表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '文件配置表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_file_config
@@ -399,7 +360,7 @@ CREATE TABLE `infra_file_content`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 286 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '文件表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 286 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '文件表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_file_content
@@ -425,7 +386,7 @@ CREATE TABLE `infra_job`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '定时任务表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '定时任务表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_job
@@ -470,7 +431,7 @@ CREATE TABLE `infra_job_log`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 987 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '定时任务日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 987 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '定时任务日志表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of infra_job_log
@@ -494,7 +455,7 @@ CREATE TABLE `jrisk_demo01_contact`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '示例联系人表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '示例联系人表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jrisk_demo01_contact
@@ -516,7 +477,7 @@ CREATE TABLE `jrisk_demo02_category`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '示例分类表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '示例分类表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jrisk_demo02_category
@@ -545,27 +506,15 @@ CREATE TABLE `jrisk_demo03_course`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '学生课程表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '学生课程表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jrisk_demo03_course
 -- ----------------------------
-INSERT INTO `jrisk_demo03_course` VALUES (2, 2, '语文', 66, '1', '2023-11-16 23:21:49', '1', '2024-09-17 10:55:30', b'1', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (3, 2, '数学', 22, '1', '2023-11-16 23:21:49', '1', '2024-09-17 10:55:30', b'1', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (6, 5, '体育', 23, '1', '2023-11-16 23:22:46', '1', '2023-11-16 15:44:40', b'1', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (7, 5, '计算机', 11, '1', '2023-11-16 23:22:46', '1', '2023-11-16 15:44:40', b'1', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (8, 5, '体育', 23, '1', '2023-11-16 23:22:46', '1', '2023-11-16 15:47:09', b'1', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (9, 5, '计算机', 11, '1', '2023-11-16 23:22:46', '1', '2023-11-16 15:47:09', b'1', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (10, 5, '体育', 23, '1', '2023-11-16 23:22:46', '1', '2024-09-17 10:55:28', b'1', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (11, 5, '计算机', 11, '1', '2023-11-16 23:22:46', '1', '2024-09-17 10:55:28', b'1', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (12, 2, '电脑', 33, '1', '2023-11-17 00:20:42', '1', '2023-11-16 16:20:45', b'1', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (13, 9, '滑雪', 12, '1', '2023-11-17 13:13:20', '1', '2024-09-17 10:55:26', b'1', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (14, 9, '滑雪', 12, '1', '2023-11-17 13:13:20', '1', '2024-09-17 10:55:49', b'1', 1);
 INSERT INTO `jrisk_demo03_course` VALUES (15, 5, '体育', 23, '1', '2023-11-16 23:22:46', '1', '2024-09-17 18:55:29', b'0', 1);
 INSERT INTO `jrisk_demo03_course` VALUES (16, 5, '计算机', 11, '1', '2023-11-16 23:22:46', '1', '2024-09-17 18:55:29', b'0', 1);
 INSERT INTO `jrisk_demo03_course` VALUES (17, 2, '语文', 66, '1', '2023-11-16 23:21:49', '1', '2024-09-17 18:55:31', b'0', 1);
 INSERT INTO `jrisk_demo03_course` VALUES (18, 2, '数学', 22, '1', '2023-11-16 23:21:49', '1', '2024-09-17 18:55:31', b'0', 1);
-INSERT INTO `jrisk_demo03_course` VALUES (19, 9, '滑雪', 12, '1', '2023-11-17 13:13:20', '1', '2025-04-19 02:49:03', b'1', 1);
 INSERT INTO `jrisk_demo03_course` VALUES (20, 9, '滑雪', 12, '1', '2023-11-17 13:13:20', '1', '2025-04-19 10:49:04', b'0', 1);
 
 -- ----------------------------
@@ -584,7 +533,7 @@ CREATE TABLE `jrisk_demo03_grade`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '学生班级表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '学生班级表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jrisk_demo03_grade
@@ -610,7 +559,7 @@ CREATE TABLE `jrisk_demo03_student`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '学生表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '学生表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jrisk_demo03_student
@@ -631,7 +580,7 @@ CREATE TABLE `qrtz_blob_triggers`  (
   PRIMARY KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) USING BTREE,
   INDEX `SCHED_NAME`(`SCHED_NAME` ASC, `TRIGGER_NAME` ASC, `TRIGGER_GROUP` ASC) USING BTREE,
   CONSTRAINT `qrtz_blob_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_blob_triggers
@@ -646,7 +595,7 @@ CREATE TABLE `qrtz_calendars`  (
   `CALENDAR_NAME` varchar(190) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `CALENDAR` blob NOT NULL,
   PRIMARY KEY (`SCHED_NAME`, `CALENDAR_NAME`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_calendars
@@ -664,7 +613,7 @@ CREATE TABLE `qrtz_cron_triggers`  (
   `TIME_ZONE_ID` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) USING BTREE,
   CONSTRAINT `qrtz_cron_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_cron_triggers
@@ -706,7 +655,7 @@ CREATE TABLE `qrtz_fired_triggers`  (
   INDEX `IDX_QRTZ_FT_JG`(`SCHED_NAME` ASC, `JOB_GROUP` ASC) USING BTREE,
   INDEX `IDX_QRTZ_FT_T_G`(`SCHED_NAME` ASC, `TRIGGER_NAME` ASC, `TRIGGER_GROUP` ASC) USING BTREE,
   INDEX `IDX_QRTZ_FT_TG`(`SCHED_NAME` ASC, `TRIGGER_GROUP` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_fired_triggers
@@ -730,7 +679,7 @@ CREATE TABLE `qrtz_job_details`  (
   PRIMARY KEY (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`) USING BTREE,
   INDEX `IDX_QRTZ_J_REQ_RECOVERY`(`SCHED_NAME` ASC, `REQUESTS_RECOVERY` ASC) USING BTREE,
   INDEX `IDX_QRTZ_J_GRP`(`SCHED_NAME` ASC, `JOB_GROUP` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_job_details
@@ -755,7 +704,7 @@ CREATE TABLE `qrtz_locks`  (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `LOCK_NAME` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`SCHED_NAME`, `LOCK_NAME`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_locks
@@ -771,7 +720,7 @@ CREATE TABLE `qrtz_paused_trigger_grps`  (
   `SCHED_NAME` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `TRIGGER_GROUP` varchar(190) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`SCHED_NAME`, `TRIGGER_GROUP`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_paused_trigger_grps
@@ -787,7 +736,7 @@ CREATE TABLE `qrtz_scheduler_state`  (
   `LAST_CHECKIN_TIME` bigint NOT NULL,
   `CHECKIN_INTERVAL` bigint NOT NULL,
   PRIMARY KEY (`SCHED_NAME`, `INSTANCE_NAME`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_scheduler_state
@@ -807,7 +756,7 @@ CREATE TABLE `qrtz_simple_triggers`  (
   `TIMES_TRIGGERED` bigint NOT NULL,
   PRIMARY KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) USING BTREE,
   CONSTRAINT `qrtz_simple_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_simple_triggers
@@ -834,7 +783,7 @@ CREATE TABLE `qrtz_simprop_triggers`  (
   `BOOL_PROP_2` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) USING BTREE,
   CONSTRAINT `qrtz_simprop_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) REFERENCES `qrtz_triggers` (`SCHED_NAME`, `TRIGGER_NAME`, `TRIGGER_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_simprop_triggers
@@ -875,7 +824,7 @@ CREATE TABLE `qrtz_triggers`  (
   INDEX `IDX_QRTZ_T_NFT_ST_MISFIRE`(`SCHED_NAME` ASC, `MISFIRE_INSTR` ASC, `NEXT_FIRE_TIME` ASC, `TRIGGER_STATE` ASC) USING BTREE,
   INDEX `IDX_QRTZ_T_NFT_ST_MISFIRE_GRP`(`SCHED_NAME` ASC, `MISFIRE_INSTR` ASC, `NEXT_FIRE_TIME` ASC, `TRIGGER_GROUP` ASC, `TRIGGER_STATE` ASC) USING BTREE,
   CONSTRAINT `qrtz_triggers_ibfk_1` FOREIGN KEY (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`) REFERENCES `qrtz_job_details` (`SCHED_NAME`, `JOB_NAME`, `JOB_GROUP`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of qrtz_triggers
@@ -912,11 +861,13 @@ CREATE TABLE `risk_cond`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '风控条件表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '风控条件表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of risk_cond
 -- ----------------------------
+INSERT INTO `risk_cond` VALUES (1, 20001, 'recent', 10, 'minute', 100.00, '2025-12-12 00:00:00', 1, '1', '2025-12-12 08:05:32', '1', '2025-12-12 08:30:31', b'0', 1);
+INSERT INTO `risk_cond` VALUES (2, 20002, 'range', 28, 'hour', 99.00, '2025-12-13 00:00:00', 1, '1', '2025-12-12 08:05:32', '1', '2025-12-12 08:30:31', b'0', 1);
 
 -- ----------------------------
 -- Table structure for risk_rule
@@ -939,13 +890,12 @@ CREATE TABLE `risk_rule`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '风控规则表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '风控规则表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of risk_rule
 -- ----------------------------
-INSERT INTO `risk_rule` VALUES (1, 10001, '高频抽奖', '游戏平台的高频抽奖规则', 'xxxxx', 2, 'game', 'user', 0, '1', '2025-12-12 05:54:17', '1', '2025-12-12 05:54:17', b'0', 1);
-INSERT INTO `risk_rule` VALUES (2, 10002, '刷单预警', '商城平台的刷单预警规则', 'xxxxx', 3, 'mall', 'bank', 1, '1', '2025-12-12 05:55:19', '1', '2025-12-12 05:55:19', b'0', 1);
+INSERT INTO `risk_rule` VALUES (1, 10001, '规则1', '规则1描述', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', 2, 'game', 'user', 0, '1', '2025-12-12 08:05:32', '1', '2025-12-12 08:30:31', b'0', 1);
 
 -- ----------------------------
 -- Table structure for system_dept
@@ -967,7 +917,7 @@ CREATE TABLE `system_dept`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 116 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '部门表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 116 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '部门表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_dept
@@ -1007,7 +957,7 @@ CREATE TABLE `system_dict_data`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3047 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '字典数据表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3047 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '字典数据表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_dict_data
@@ -1673,7 +1623,7 @@ CREATE TABLE `system_dict_type`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `deleted_time` datetime NULL DEFAULT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2013 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '字典类型表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2013 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '字典类型表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_dict_type
@@ -1816,7 +1766,7 @@ CREATE TABLE `system_login_log`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4069 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '系统访问记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4069 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '系统访问记录' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_login_log
@@ -1844,15 +1794,13 @@ CREATE TABLE `system_mail_account`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '邮箱账号表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '邮箱账号表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_mail_account
 -- ----------------------------
 INSERT INTO `system_mail_account` VALUES (1, '7684413@qq.com', '7684413@qq.com', '1234576', '127.0.0.1', 8080, b'0', b'0', '1', '2023-01-25 17:39:52', '1', '2025-04-04 16:34:40', b'0');
 INSERT INTO `system_mail_account` VALUES (2, 'ydym_test@163.com', 'ydym_test@163.com', 'WBZTEINMIFVRYSOE', 'smtp.163.com', 465, b'1', b'0', '1', '2023-01-26 01:26:03', '1', '2025-07-26 21:57:55', b'0');
-INSERT INTO `system_mail_account` VALUES (3, '76854114@qq.com', '3335', '11234', 'yunai1.cn', 466, b'0', b'0', '1', '2023-01-27 15:06:38', '1', '2023-01-27 07:08:36', b'1');
-INSERT INTO `system_mail_account` VALUES (4, '7685413x@qq.com', '2', '3', '4', 5, b'1', b'0', '1', '2023-04-12 23:05:06', '1', '2023-04-12 15:05:11', b'1');
 
 -- ----------------------------
 -- Table structure for system_mail_log
@@ -1883,7 +1831,7 @@ CREATE TABLE `system_mail_log`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 368 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '邮件日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 368 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '邮件日志表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_mail_log
@@ -1910,14 +1858,13 @@ CREATE TABLE `system_mail_template`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '邮件模版表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '邮件模版表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_mail_template
 -- ----------------------------
 INSERT INTO `system_mail_template` VALUES (13, '后台用户短信登录', 'admin-sms-login', 1, '奥特曼', '你猜我猜', '<p>您的验证码是{code}，名字是{name}</p>', '[\"code\",\"name\"]', 0, '3', '1', '2021-10-11 08:10:00', '1', '2023-12-02 19:51:14', b'0');
 INSERT INTO `system_mail_template` VALUES (14, '测试模版', 'test_01', 2, '芋艿', '一个标题', '<p>你是 {key01} 吗？</p><p><br></p><p>是的话，赶紧 {key02} 一下！</p>', '[\"key01\",\"key02\"]', 0, NULL, '1', '2023-01-26 01:27:40', '1', '2025-07-26 21:48:45', b'0');
-INSERT INTO `system_mail_template` VALUES (15, '3', '2', 2, '7', '4', '<p>45</p>', '[]', 1, '80', '1', '2023-01-27 15:50:35', '1', '2025-07-26 21:47:49', b'1');
 
 -- ----------------------------
 -- Table structure for system_menu
@@ -1944,7 +1891,7 @@ CREATE TABLE `system_menu`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5062 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '菜单权限表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5074 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '菜单权限表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_menu
@@ -2886,20 +2833,18 @@ INSERT INTO `system_menu` VALUES (5044, '删除模版消息', 'mp:message-templa
 INSERT INTO `system_menu` VALUES (5045, '同步公众号模板', 'mp:message-template:sync', 3, 3, 5042, '', '', '', '', 0, b'1', b'1', b'1', '1', '2025-11-26 17:00:55', '1', '2025-11-26 17:00:55', b'0');
 INSERT INTO `system_menu` VALUES (5046, '给粉丝发送模版消息', 'mp:message-template:send', 3, 4, 5042, '', '', '', '', 0, b'1', b'1', b'1', '1', '2025-11-26 17:01:11', '1', '2025-11-26 17:01:11', b'0');
 INSERT INTO `system_menu` VALUES (5047, '风控管理', '', 1, 9, 0, '/risk', 'ep:aim', '', '', 0, b'1', b'1', b'1', '1', '2025-12-10 06:20:50', '1', '2025-12-10 06:20:50', b'0');
-INSERT INTO `system_menu` VALUES (5048, '规则管理', '', 2, 1, 5047, 'rule', 'ep:document-copy', 'risk/rule/index', 'riskRule', 0, b'1', b'1', b'1', '1', '2025-12-10 06:22:50', '1', '2025-12-12 05:41:41', b'1');
-INSERT INTO `system_menu` VALUES (5049, '规则查询', 'risk:rule:query', 3, 1, 5048, '', '', '', '', 0, b'1', b'1', b'1', '1', '2025-12-10 06:27:54', '1', '2025-12-12 05:41:29', b'1');
-INSERT INTO `system_menu` VALUES (5050, '规则详情', 'risk:rule:detail', 3, 2, 5048, '', '', '', '', 0, b'1', b'1', b'1', '1', '2025-12-10 06:28:36', '1', '2025-12-12 05:41:31', b'1');
-INSERT INTO `system_menu` VALUES (5051, '规则新增', 'risk:rule:create', 3, 3, 5048, '', '', '', '', 0, b'1', b'1', b'1', '1', '2025-12-10 06:29:00', '1', '2025-12-12 05:41:32', b'1');
-INSERT INTO `system_menu` VALUES (5052, '规则修改', 'risk:rule:update', 3, 4, 5048, '', '', '', '', 0, b'1', b'1', b'1', '1', '2025-12-10 06:29:19', '1', '2025-12-12 05:41:34', b'1');
-INSERT INTO `system_menu` VALUES (5053, '规则删除', 'risk:rule:delete', 3, 5, 5048, '', '', '', '', 0, b'1', b'1', b'1', '1', '2025-12-10 06:29:39', '1', '2025-12-12 05:41:36', b'1');
-INSERT INTO `system_menu` VALUES (5054, '规则导出', 'risk:rule:export', 3, 6, 5048, '', '', '', '', 0, b'1', b'1', b'1', '1', '2025-12-10 06:29:57', '1', '2025-12-12 05:41:37', b'1');
-INSERT INTO `system_menu` VALUES (5055, '规则启停', 'risk:rule:enable', 3, 7, 5048, '', '', '', '', 0, b'1', b'1', b'1', '1', '2025-12-10 06:30:34', '1', '2025-12-12 05:41:39', b'1');
-INSERT INTO `system_menu` VALUES (5056, '风控规则管理', '', 2, 0, 5047, 'rule', '', 'risk/rule/index', 'Rule', 0, b'1', b'1', b'1', '', '2025-12-12 05:42:05', '', '2025-12-12 05:42:05', b'0');
-INSERT INTO `system_menu` VALUES (5057, '风控规则查询', 'risk:rule:query', 3, 1, 5056, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 05:42:06', '', '2025-12-12 05:42:06', b'0');
-INSERT INTO `system_menu` VALUES (5058, '风控规则创建', 'risk:rule:create', 3, 2, 5056, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 05:42:06', '', '2025-12-12 05:42:06', b'0');
-INSERT INTO `system_menu` VALUES (5059, '风控规则更新', 'risk:rule:update', 3, 3, 5056, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 05:42:06', '', '2025-12-12 05:42:06', b'0');
-INSERT INTO `system_menu` VALUES (5060, '风控规则删除', 'risk:rule:delete', 3, 4, 5056, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 05:42:06', '', '2025-12-12 05:42:06', b'0');
-INSERT INTO `system_menu` VALUES (5061, '风控规则导出', 'risk:rule:export', 3, 5, 5056, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 05:42:06', '', '2025-12-12 05:42:06', b'0');
+INSERT INTO `system_menu` VALUES (5062, '风控条件管理', '', 2, 0, 5047, 'cond', '', 'risk/cond/index', 'Cond', 0, b'1', b'1', b'1', '', '2025-12-12 07:31:34', '', '2025-12-12 07:31:34', b'0');
+INSERT INTO `system_menu` VALUES (5063, '风控条件查询', 'risk:cond:query', 3, 1, 5062, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 07:31:34', '', '2025-12-12 07:31:34', b'0');
+INSERT INTO `system_menu` VALUES (5064, '风控条件创建', 'risk:cond:create', 3, 2, 5062, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 07:31:34', '', '2025-12-12 07:31:34', b'0');
+INSERT INTO `system_menu` VALUES (5065, '风控条件更新', 'risk:cond:update', 3, 3, 5062, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 07:31:34', '', '2025-12-12 07:31:34', b'0');
+INSERT INTO `system_menu` VALUES (5066, '风控条件删除', 'risk:cond:delete', 3, 4, 5062, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 07:31:34', '', '2025-12-12 07:31:34', b'0');
+INSERT INTO `system_menu` VALUES (5067, '风控条件导出', 'risk:cond:export', 3, 5, 5062, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 07:31:34', '', '2025-12-12 07:31:34', b'0');
+INSERT INTO `system_menu` VALUES (5068, '风控规则管理', '', 2, 0, 5047, 'rule', '', 'risk/rule/index', 'Rule', 0, b'1', b'1', b'1', '', '2025-12-12 07:31:34', '', '2025-12-12 07:31:34', b'0');
+INSERT INTO `system_menu` VALUES (5069, '风控规则查询', 'risk:rule:query', 3, 1, 5068, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 07:31:34', '', '2025-12-12 07:31:34', b'0');
+INSERT INTO `system_menu` VALUES (5070, '风控规则创建', 'risk:rule:create', 3, 2, 5068, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 07:31:34', '', '2025-12-12 07:31:34', b'0');
+INSERT INTO `system_menu` VALUES (5071, '风控规则更新', 'risk:rule:update', 3, 3, 5068, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 07:31:35', '', '2025-12-12 07:31:35', b'0');
+INSERT INTO `system_menu` VALUES (5072, '风控规则删除', 'risk:rule:delete', 3, 4, 5068, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 07:31:35', '', '2025-12-12 07:31:35', b'0');
+INSERT INTO `system_menu` VALUES (5073, '风控规则导出', 'risk:rule:export', 3, 5, 5068, '', '', '', NULL, 0, b'1', b'1', b'1', '', '2025-12-12 07:31:35', '', '2025-12-12 07:31:35', b'0');
 
 -- ----------------------------
 -- Table structure for system_notice
@@ -2918,7 +2863,7 @@ CREATE TABLE `system_notice`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '通知公告表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '通知公告表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_notice
@@ -2950,7 +2895,7 @@ CREATE TABLE `system_notify_message`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '站内信消息表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '站内信消息表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_notify_message
@@ -2985,7 +2930,7 @@ CREATE TABLE `system_notify_template`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '站内信模板表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '站内信模板表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_notify_template
@@ -3014,68 +2959,17 @@ CREATE TABLE `system_oauth2_access_token`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_access_token`(`access_token` ASC) USING BTREE,
   INDEX `idx_refresh_token`(`refresh_token` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 39794 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'OAuth2 访问令牌' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 39798 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'OAuth2 访问令牌' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_oauth2_access_token
 -- ----------------------------
-INSERT INTO `system_oauth2_access_token` VALUES (39737, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '4d5c7138908d43d1b98eabfa35862eb9', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-10 05:04:57', NULL, '2025-12-10 04:34:57', NULL, '2025-12-10 05:05:51', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39738, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '2dcd2e30e75e4eca86e3c0ec685f2770', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-10 05:35:51', NULL, '2025-12-10 05:05:51', NULL, '2025-12-10 06:17:10', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39739, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '80dc2958aafe4c799e05e2a1f8773178', '258713642f86485f908377a59da0b5c8', 'default', NULL, '2025-12-10 05:37:59', NULL, '2025-12-10 05:07:59', NULL, '2025-12-10 05:39:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39740, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '4fcba99a91ee430e980cd516676b3f72', '258713642f86485f908377a59da0b5c8', 'default', NULL, '2025-12-10 06:09:00', NULL, '2025-12-10 05:39:00', NULL, '2025-12-10 06:10:03', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39741, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'd41a85abd360404bb2cb9236842597fa', '258713642f86485f908377a59da0b5c8', 'default', NULL, '2025-12-10 06:40:03', NULL, '2025-12-10 06:10:03', NULL, '2025-12-10 06:42:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39742, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '8cff1c6116904d9782ed50bcb80f8582', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-10 06:47:10', NULL, '2025-12-10 06:17:10', NULL, '2025-12-10 06:48:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39743, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '64a90f39f3c341fc80e926563e8f71dc', '258713642f86485f908377a59da0b5c8', 'default', NULL, '2025-12-10 07:12:00', NULL, '2025-12-10 06:42:00', NULL, '2025-12-10 07:13:33', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39744, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'df220bd67c4f48b2ba8a706de830bfb6', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-10 07:18:00', NULL, '2025-12-10 06:48:00', NULL, '2025-12-10 07:18:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39745, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'a0a477421937440b93780e1c4aac41e8', '258713642f86485f908377a59da0b5c8', 'default', NULL, '2025-12-10 07:43:33', NULL, '2025-12-10 07:13:33', NULL, '2025-12-10 07:44:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39746, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '95e937619584404bb383848cb36ba5a9', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-10 07:48:00', NULL, '2025-12-10 07:18:00', NULL, '2025-12-10 07:49:34', b'1', 1);
 INSERT INTO `system_oauth2_access_token` VALUES (39747, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '48de5160a2ab45c98881a1b2932f4a21', '258713642f86485f908377a59da0b5c8', 'default', NULL, '2025-12-10 08:14:00', NULL, '2025-12-10 07:44:00', NULL, '2025-12-10 07:44:00', b'0', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39748, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '9dcf691164794c0cab5c6c61685877ce', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-10 08:19:34', NULL, '2025-12-10 07:49:34', NULL, '2025-12-10 08:20:49', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39749, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '7c682d7753ad49ae899deb5a6ace8cda', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-10 08:50:49', NULL, '2025-12-10 08:20:49', NULL, '2025-12-10 08:51:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39750, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '5c33948609ac4b2fb814717920e43e86', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 09:10:02', NULL, '2025-12-10 08:40:02', NULL, '2025-12-10 09:12:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39751, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '52128481f0f94285855af35bc5fdbdfb', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-10 09:21:00', NULL, '2025-12-10 08:51:00', NULL, '2025-12-10 09:21:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39752, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '418d0577f4434155a439a820e4da4d25', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 09:42:00', NULL, '2025-12-10 09:12:00', NULL, '2025-12-10 09:42:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39753, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'a1de768a29a946e8a6e4c87bd5f274f8', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-10 09:51:00', NULL, '2025-12-10 09:21:00', NULL, '2025-12-10 09:51:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39754, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '9e840623d15c43908b8142cc6a0e0eb9', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 10:12:00', NULL, '2025-12-10 09:42:00', NULL, '2025-12-10 10:13:11', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39755, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '12fd9f027e654441833c985981ea4588', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-10 10:21:00', NULL, '2025-12-10 09:51:00', NULL, '2025-12-11 03:08:25', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39756, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '47e6d4731fbf4fea8c37238958513da0', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 10:43:11', NULL, '2025-12-10 10:13:11', NULL, '2025-12-10 10:44:05', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39757, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '9a449067271c41b7a0669e1d9f7d9ef2', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 11:14:05', NULL, '2025-12-10 10:44:05', NULL, '2025-12-10 11:15:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39758, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '52295a7fe4d94c32b68181c4a37b7300', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 11:45:00', NULL, '2025-12-10 11:15:00', NULL, '2025-12-10 11:45:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39759, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'd5874ddc214b43939abde0a37540fd98', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 12:15:00', NULL, '2025-12-10 11:45:00', NULL, '2025-12-10 12:15:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39760, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '611afc37e33d4526b13b96fbea10ce81', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 12:45:00', NULL, '2025-12-10 12:15:00', NULL, '2025-12-10 12:45:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39761, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'b0677aa7f2184cdc909b995a844a1852', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 13:15:01', NULL, '2025-12-10 12:45:01', NULL, '2025-12-10 13:16:00', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39762, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '6337c0ded36442058d84985c0ba18059', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 13:46:00', NULL, '2025-12-10 13:16:00', NULL, '2025-12-10 13:46:19', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39763, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'fa72f62b2ba0451b98d7950ae0bfe8f4', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 14:16:19', NULL, '2025-12-10 13:46:20', NULL, '2025-12-10 14:16:24', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39764, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'fcb7ee17fbb94b099b4e39e56793e38e', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-10 14:46:24', NULL, '2025-12-10 14:16:24', NULL, '2025-12-11 02:22:23', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39765, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '25e2fb73b91c403ba0f7e06c8ed13271', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-11 02:52:23', NULL, '2025-12-11 02:22:23', NULL, '2025-12-11 02:52:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39766, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '0f685d298c114137bd3db4d7b9d2a972', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-11 03:22:57', NULL, '2025-12-11 02:52:57', NULL, '2025-12-11 10:25:09', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39767, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'a42235ed0c134106b3769424dbe60c5b', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 03:38:25', NULL, '2025-12-11 03:08:25', NULL, '2025-12-11 03:38:26', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39768, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'dc46e16cfef149db9a2bb5666feaf1f3', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 04:08:26', NULL, '2025-12-11 03:38:26', NULL, '2025-12-11 04:08:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39769, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '2de311468e494043af41d2ae37133818', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 04:38:57', NULL, '2025-12-11 04:08:57', NULL, '2025-12-11 04:40:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39770, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '073b61e622654369a57f4a3ce4e10fda', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 05:10:57', NULL, '2025-12-11 04:40:57', NULL, '2025-12-11 05:12:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39771, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '80c0ee655f554b71bfe7dc74de85b23d', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 05:42:57', NULL, '2025-12-11 05:12:57', NULL, '2025-12-11 05:44:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39772, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '0d6fe22193b24f22ad05653f820dcf35', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 06:14:57', NULL, '2025-12-11 05:44:57', NULL, '2025-12-11 06:16:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39773, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '658190f2fb2741ca84b0ed47ec8c3069', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 06:46:57', NULL, '2025-12-11 06:16:57', NULL, '2025-12-11 06:48:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39774, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '2243a3a608db4a2bacf646a892101525', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 07:18:57', NULL, '2025-12-11 06:48:57', NULL, '2025-12-11 07:20:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39775, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '873e1c872d1744a19a19de01e163f520', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 07:50:57', NULL, '2025-12-11 07:20:57', NULL, '2025-12-11 07:52:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39776, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '488cf897561b4d4f8f0e480427a23133', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 08:22:57', NULL, '2025-12-11 07:52:57', NULL, '2025-12-11 08:24:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39777, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '60f92e8a2e204c499abc21458173e332', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 08:54:57', NULL, '2025-12-11 08:24:57', NULL, '2025-12-11 08:56:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39778, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'a877c3d3206c431a957cf50f35579863', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 09:26:57', NULL, '2025-12-11 08:56:57', NULL, '2025-12-11 09:28:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39779, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'd55e90ef127847e5873b33ac6dc43b80', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 09:58:57', NULL, '2025-12-11 09:28:57', NULL, '2025-12-11 10:00:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39780, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '5a47a15d2dec4ef2afd082044f137a6d', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 10:30:57', NULL, '2025-12-11 10:00:57', NULL, '2025-12-11 10:31:11', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39781, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '8d4d92a017f84da4a4c68d93f0073b49', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-11 10:55:09', NULL, '2025-12-11 10:25:09', NULL, '2025-12-12 02:42:41', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39782, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'fb31d1b7f554463f97ecbc37b502cff5', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 11:01:11', NULL, '2025-12-11 10:31:11', NULL, '2025-12-11 11:02:15', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39783, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'fe0798ff565e4676b143d54f42b8e148', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 11:32:15', NULL, '2025-12-11 11:02:15', NULL, '2025-12-11 11:33:57', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39784, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '7f3f1fba28c949ae92d7179d8888e1b7', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 12:03:57', NULL, '2025-12-11 11:33:57', NULL, '2025-12-11 12:04:32', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39785, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'd05e944f07c44b349df130ee83aad02b', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-11 12:34:32', NULL, '2025-12-11 12:04:32', NULL, '2025-12-12 02:41:02', b'1', 1);
 INSERT INTO `system_oauth2_access_token` VALUES (39786, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '699e474fb56549a9858a9078e775b568', '7ae22bf36d9741be87a6e70c61c05c92', 'default', NULL, '2025-12-12 03:11:02', NULL, '2025-12-12 02:41:02', NULL, '2025-12-12 02:41:02', b'0', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39787, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'd0f9b3108bae43fda2c1d2c026188c3f', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 03:12:41', NULL, '2025-12-12 02:42:41', NULL, '2025-12-12 03:13:53', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39788, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '00617798163c4989afafd30cec836feb', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 03:43:53', NULL, '2025-12-12 03:13:53', NULL, '2025-12-12 03:43:53', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39789, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '46e2fbb34e3445de8e8b214cc3c91038', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 04:13:53', NULL, '2025-12-12 03:43:53', NULL, '2025-12-12 04:13:53', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39790, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'e24d044597d2413b8c2cafff9368e248', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 04:43:53', NULL, '2025-12-12 04:13:53', NULL, '2025-12-12 04:45:46', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39791, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '536715fe40024f9394b2ca94dc8ca20a', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 05:15:46', NULL, '2025-12-12 04:45:46', NULL, '2025-12-12 05:15:53', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39792, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '23fa1f5a3e074b0bab0850b57d9ce4b0', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 05:45:53', NULL, '2025-12-12 05:15:53', NULL, '2025-12-12 05:47:38', b'1', 1);
-INSERT INTO `system_oauth2_access_token` VALUES (39793, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'c26791ec9cb245c38c08f9fc9cd8fd78', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 06:17:38', NULL, '2025-12-12 05:47:38', NULL, '2025-12-12 05:47:38', b'0', 1);
+INSERT INTO `system_oauth2_access_token` VALUES (39794, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', 'feab13f93943493abeffca2d4b138d78', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 07:19:15', NULL, '2025-12-12 06:49:15', NULL, '2025-12-12 07:21:53', b'1', 1);
+INSERT INTO `system_oauth2_access_token` VALUES (39795, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '38351cc6608b40b6a29128f5d0beeae6', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 07:51:53', NULL, '2025-12-12 07:21:53', NULL, '2025-12-12 07:52:00', b'1', 1);
+INSERT INTO `system_oauth2_access_token` VALUES (39796, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '123c665da7674fccb9449a9a53ee6241', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 08:22:00', NULL, '2025-12-12 07:52:00', NULL, '2025-12-12 08:22:34', b'1', 1);
+INSERT INTO `system_oauth2_access_token` VALUES (39797, 1, 2, '{\"nickname\":\"李博帅\",\"deptId\":\"103\"}', '1979770ec2b1462b8ceccce1b74c0cd8', 'bac91996229546d5b1e046bdca98ff89', 'default', NULL, '2025-12-12 08:52:34', NULL, '2025-12-12 08:22:34', NULL, '2025-12-12 08:22:34', b'0', 1);
 
 -- ----------------------------
 -- Table structure for system_oauth2_approve
@@ -3096,7 +2990,7 @@ CREATE TABLE `system_oauth2_approve`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 84 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'OAuth2 批准表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 84 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'OAuth2 批准表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_oauth2_approve
@@ -3129,7 +3023,7 @@ CREATE TABLE `system_oauth2_client`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'OAuth2 客户端表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'OAuth2 客户端表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_oauth2_client
@@ -3160,7 +3054,7 @@ CREATE TABLE `system_oauth2_code`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 155 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'OAuth2 授权码表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 155 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'OAuth2 授权码表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_oauth2_code
@@ -3185,7 +3079,7 @@ CREATE TABLE `system_oauth2_refresh_token`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2246 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'OAuth2 刷新令牌' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2246 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'OAuth2 刷新令牌' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_oauth2_refresh_token
@@ -3220,7 +3114,7 @@ CREATE TABLE `system_operate_log`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9178 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '操作日志记录 V2 版本' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9178 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '操作日志记录 V2 版本' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_operate_log
@@ -3244,7 +3138,7 @@ CREATE TABLE `system_post`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '岗位信息表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '岗位信息表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_post
@@ -3275,7 +3169,7 @@ CREATE TABLE `system_role`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 159 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色信息表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 159 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色信息表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_role
@@ -3302,7 +3196,7 @@ CREATE TABLE `system_role_menu`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6293 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色和菜单关联表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6293 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色和菜单关联表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_role_menu
@@ -4141,7 +4035,7 @@ CREATE TABLE `system_sms_channel`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '短信渠道' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '短信渠道' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_sms_channel
@@ -4172,7 +4066,7 @@ CREATE TABLE `system_sms_code`  (
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_mobile`(`mobile` ASC) USING BTREE COMMENT '手机号'
-) ENGINE = InnoDB AUTO_INCREMENT = 682 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '手机验证码' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 682 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '手机验证码' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_sms_code
@@ -4211,7 +4105,7 @@ CREATE TABLE `system_sms_log`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1528 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '短信日志' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1528 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '短信日志' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_sms_log
@@ -4239,7 +4133,7 @@ CREATE TABLE `system_sms_template`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '短信模板' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '短信模板' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_sms_template
@@ -4280,17 +4174,11 @@ CREATE TABLE `system_social_client`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 46 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '社交客户端表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 46 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '社交客户端表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_social_client
 -- ----------------------------
-INSERT INTO `system_social_client` VALUES (1, '钉钉', 20, 2, 'dingvrnreaje3yqvzhxg', 'i8E6iZyDvZj51JIb0tYsYfVQYOks9Cq1lgryEjFRqC79P3iJcrxEwT6Qk2QvLrLI', NULL, 0, '', '2023-10-18 11:21:18', '1', '2023-12-20 21:28:26', b'1', 1);
-INSERT INTO `system_social_client` VALUES (2, '钉钉（王土豆）', 20, 2, 'dingtsu9hpepjkbmthhw', 'FP_bnSq_HAHKCSncmJjw5hxhnzs6vaVDSZZn3egj6rdqTQ_hu5tQVJyLMpgCakdP', NULL, 0, '', '2023-10-18 11:21:18', '', '2023-12-20 21:28:26', b'1', 121);
-INSERT INTO `system_social_client` VALUES (3, '微信公众号', 31, 1, 'wx5b23ba7a5589ecbb', '2a7b3b20c537e52e74afd395eb85f61f', NULL, 0, '', '2023-10-18 16:07:46', '1', '2023-12-20 21:28:23', b'1', 1);
-INSERT INTO `system_social_client` VALUES (43, '微信小程序', 34, 1, 'wx63c280fe3248a3e7', '6f270509224a7ae1296bbf1c8cb97aed', NULL, 0, '', '2023-10-19 13:37:41', '1', '2023-12-20 21:28:25', b'1', 1);
-INSERT INTO `system_social_client` VALUES (44, '1', 10, 1, '2', '3', NULL, 0, '1', '2025-04-06 20:36:28', '1', '2025-04-06 20:43:12', b'1', 1);
-INSERT INTO `system_social_client` VALUES (45, '1', 10, 1, '2', '3', NULL, 1, '1', '2025-09-06 20:26:15', '1', '2025-09-06 20:27:55', b'1', 1);
 
 -- ----------------------------
 -- Table structure for system_social_user
@@ -4314,7 +4202,7 @@ CREATE TABLE `system_social_user`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '社交用户表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '社交用户表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_social_user
@@ -4337,7 +4225,7 @@ CREATE TABLE `system_social_user_bind`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 165 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '社交绑定表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 165 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '社交绑定表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_social_user_bind
@@ -4364,7 +4252,7 @@ CREATE TABLE `system_tenant`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 162 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '租户表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 162 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '租户表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_tenant
@@ -4389,7 +4277,7 @@ CREATE TABLE `system_tenant_package`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 113 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '租户套餐表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 113 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '租户套餐表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_tenant_package
@@ -4411,7 +4299,7 @@ CREATE TABLE `system_user_post`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 128 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '用户岗位表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 128 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '用户岗位表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_user_post
@@ -4441,7 +4329,7 @@ CREATE TABLE `system_user_role`  (
   `deleted` bit(1) NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '用户和角色关联表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '用户和角色关联表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_user_role
@@ -4490,7 +4378,7 @@ CREATE TABLE `system_users`  (
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否删除',
   `tenant_id` bigint NOT NULL DEFAULT 0 COMMENT '租户编号',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 143 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '用户信息表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 143 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '用户信息表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of system_users
