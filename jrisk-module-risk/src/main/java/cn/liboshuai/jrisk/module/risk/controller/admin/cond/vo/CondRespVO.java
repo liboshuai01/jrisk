@@ -1,5 +1,6 @@
 package cn.liboshuai.jrisk.module.risk.controller.admin.cond.vo;
 
+import cn.liboshuai.jrisk.module.risk.enums.DictTypeConstants;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import java.util.*;
@@ -25,7 +26,7 @@ public class CondRespVO {
 
     @Schema(description = "条件类型", requiredMode = Schema.RequiredMode.REQUIRED, example = "rencent")
     @ExcelProperty(value = "条件类型", converter = DictConvert.class)
-    @DictFormat("risk_cond.type") // TODO 代码优化：建议设置到对应的 DictTypeConstants 枚举类中
+    @DictFormat(DictTypeConstants.COND_TYPE)
     private String condType;
 
     @Schema(description = "窗口值", requiredMode = Schema.RequiredMode.REQUIRED)
@@ -48,4 +49,4 @@ public class CondRespVO {
     @ExcelProperty("规则编号")
     private Long ruleId;
 
-}
+}

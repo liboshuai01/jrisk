@@ -34,8 +34,8 @@ public interface CondMapper extends BaseMapperX<CondDO> {
         return delete(CondDO::getRuleId, ruleId);
     }
 
-	default int deleteByRuleIds(List<Long> ruleIds) {
-	    return deleteBatch(CondDO::getRuleId, ruleIds);
-	}
+    default int deleteByRuleIds(List<Long> ruleIds) {
+        return deleteBatch(CondDO::getRuleId, ruleIds);
+    }
 
 }

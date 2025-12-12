@@ -37,7 +37,7 @@ public class CondDO extends BaseDO {
     /**
      * 条件类型
      *
-     * 枚举 {@link TODO risk_cond.type 对应的类}
+     * 枚举 {@link cn.liboshuai.jrisk.module.risk.enums.cond.RiskCondType 对应的类}
      */
     private String condType;
     /**

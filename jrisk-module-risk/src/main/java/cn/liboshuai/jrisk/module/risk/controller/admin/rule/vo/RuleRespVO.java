@@ -1,5 +1,6 @@
 package cn.liboshuai.jrisk.module.risk.controller.admin.rule.vo;
 
+import cn.liboshuai.jrisk.module.risk.enums.DictTypeConstants;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import java.util.*;
@@ -28,22 +29,22 @@ public class RuleRespVO {
 
     @Schema(description = "预警级别", requiredMode = Schema.RequiredMode.REQUIRED, example = "2")
     @ExcelProperty(value = "预警级别", converter = DictConvert.class)
-    @DictFormat("risk_rule.level") // TODO 代码优化：建议设置到对应的 DictTypeConstants 枚举类中
+    @DictFormat(DictTypeConstants.RULE_LEVEL)
     private Integer level;
 
     @Schema(description = "渠道", requiredMode = Schema.RequiredMode.REQUIRED, example = "game")
     @ExcelProperty(value = "渠道", converter = DictConvert.class)
-    @DictFormat("risk_rule.channel") // TODO 代码优化：建议设置到对应的 DictTypeConstants 枚举类中
+    @DictFormat(DictTypeConstants.RULE_CHANNEL)
     private String channel;
 
     @Schema(description = "目标", requiredMode = Schema.RequiredMode.REQUIRED, example = "user")
     @ExcelProperty(value = "目标", converter = DictConvert.class)
-    @DictFormat("risk_rule.target") // TODO 代码优化：建议设置到对应的 DictTypeConstants 枚举类中
+    @DictFormat(DictTypeConstants.RULE_TARGET)
     private String target;
 
     @Schema(description = "状态", requiredMode = Schema.RequiredMode.REQUIRED, example = "0")
     @ExcelProperty(value = "状态", converter = DictConvert.class)
-    @DictFormat("risk_rule.status") // TODO 代码优化：建议设置到对应的 DictTypeConstants 枚举类中
+    @DictFormat(DictTypeConstants.RULE_STATUS)
     private Integer status;
 
     @Schema(description = "创建者")
@@ -62,4 +63,4 @@ public class RuleRespVO {
     @ExcelProperty("更新时间")
     private LocalDateTime updateTime;
 
-}
+}

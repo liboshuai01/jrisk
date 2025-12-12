@@ -1,11 +1,10 @@
 package cn.liboshuai.jrisk.module.risk.dal.dataobject.rule;
 
-import lombok.*;
-import java.util.*;
-import java.time.LocalDateTime;
-import java.time.LocalDateTime;
-import com.baomidou.mybatisplus.annotation.*;
 import cn.liboshuai.jrisk.framework.mybatis.core.dataobject.BaseDO;
+import com.baomidou.mybatisplus.annotation.KeySequence;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.*;
 
 /**
  * 风控规则 DO
@@ -46,27 +45,27 @@ public class RuleDO extends BaseDO {
     /**
      * 预警级别
      *
-     * 枚举 {@link TODO risk_rule.level 对应的类}
+     * 枚举 {@link cn.liboshuai.jrisk.module.risk.enums.rule.RiskRuleLevel 对应的类}
      */
     private Integer level;
     /**
      * 渠道
      *
-     * 枚举 {@link TODO risk_rule.channel 对应的类}
+     * 枚举 {@link cn.liboshuai.jrisk.module.risk.enums.rule.RiskRuleChannel 对应的类}
      */
     private String channel;
     /**
      * 目标
      *
-     * 枚举 {@link TODO risk_rule.target 对应的类}
+     * 枚举 {@link cn.liboshuai.jrisk.module.risk.enums.rule.RiskRuleTarget 对应的类}
      */
     private String target;
     /**
      * 状态
      *
-     * 枚举 {@link TODO risk_rule.status 对应的类}
+     * 枚举 {@link cn.liboshuai.jrisk.module.risk.enums.rule.RiskRuleStatus 对应的类}
      */
     private Integer status;
 
 
-}
+}
