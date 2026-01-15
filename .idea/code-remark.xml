@@ -19,6 +19,14 @@
           <option name="projectName" value="jrisk" />
           <option name="text" value="测试一下内容&#10;测试一下内容&#10;测试一下内容&#10;测试一下内容&#10;测试一下内容" />
         </CodeRemark>
+        <CodeRemark>
+          <option name="contentHash" value="3C9EAFE84D38114C42AA5BEB4D74AB78" />
+          <option name="fileName" value="UserController.java" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/jrisk-module-system/src/main/java/cn/liboshuai/jrisk/module/system/controller/admin/user/UserController.java" />
+          <option name="lineNumber" value="84" />
+          <option name="projectName" value="jrisk" />
+          <option name="text" value="重置用户密码，这是我最看好的一个东西；&#10;重置用户密码，这是我最看好的一个东西；&#10;重置用户密码，这是我最看好的一个东西；&#10;重置用户密码，这是我最看好的一个东西；&#10;重置用户密码，这是我最看好的一个东西；&#10;重置用户密码，这是我最看好的一个东西；&#10;重置用户密码，这是我最看好的一个东西；&#10;重置用户密码，这是我最看好的一个东西；" />
+        </CodeRemark>
       </list>
     </option>
     <option name="version" value="1.4.0" />
