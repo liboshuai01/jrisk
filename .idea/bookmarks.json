@@ -1,1 +1,23 @@
-{}
+{
+  "jrisk": [],
+  "用户管理": [
+    {
+      "fileDescriptor": "$/jrisk-module-system/src/main/java/cn/liboshuai/jrisk/module/system/service/user/AdminUserServiceImpl.java",
+      "linenumber": 93,
+      "name": "新增用户ServiceImpl",
+      "bookmarkType": "DEFAULT"
+    },
+    {
+      "fileDescriptor": "$/jrisk-module-system/src/main/java/cn/liboshuai/jrisk/module/system/controller/admin/user/UserController.java",
+      "linenumber": 51,
+      "name": "新增用户Controller",
+      "bookmarkType": "DEFAULT"
+    },
+    {
+      "fileDescriptor": "$/jrisk-module-system/src/main/java/cn/liboshuai/jrisk/module/system/service/user/AdminUserService.java",
+      "linenumber": 33,
+      "name": "新增用户Service",
+      "bookmarkType": "DEFAULT"
+    }
+  ]
+}
