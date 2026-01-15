@@ -1,5 +1,4 @@
 {
-  "jrisk": [],
   "用户管理": [
     {
       "fileDescriptor": "$/jrisk-module-system/src/main/java/cn/liboshuai/jrisk/module/system/service/user/AdminUserServiceImpl.java",
@@ -19,5 +18,6 @@
       "name": "新增用户Service",
       "bookmarkType": "DEFAULT"
     }
-  ]
+  ],
+  "jrisk": []
 }
