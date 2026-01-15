@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CodeRemarkPersistentStateRepository">
+    <option name="projectCodeRemarks">
+      <list>
+        <CodeRemark>
+          <option name="contentHash" value="3C9EAFE84D38114C42AA5BEB4D74AB78" />
+          <option name="fileName" value="UserController.java" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/jrisk-module-system/src/main/java/cn/liboshuai/jrisk/module/system/controller/admin/user/UserController.java" />
+          <option name="lineNumber" value="59" />
+          <option name="projectName" value="jrisk" />
+          <option name="text" value="哈哈哈哈哈哈哈" />
+        </CodeRemark>
+        <CodeRemark>
+          <option name="contentHash" value="3C9EAFE84D38114C42AA5BEB4D74AB78" />
+          <option name="fileName" value="UserController.java" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/jrisk-module-system/src/main/java/cn/liboshuai/jrisk/module/system/controller/admin/user/UserController.java" />
+          <option name="lineNumber" value="51" />
+          <option name="projectName" value="jrisk" />
+          <option name="text" value="测试一下内容&#10;测试一下内容&#10;测试一下内容&#10;测试一下内容&#10;测试一下内容" />
+        </CodeRemark>
+      </list>
+    </option>
+    <option name="version" value="1.4.0" />
+  </component>
+</project>
